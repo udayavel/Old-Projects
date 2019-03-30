@@ -1,0 +1,143 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container" style="animation: fadeIn 3s;">
+<!-- <h1>welcome  {{per}}</h1> -->
+
+<div *ngIf="!last;else low">
+    
+        <!-- <form [formGroup]="form" (ngSubmit)="submit()">
+        <h1><b>Enter Details</b></h1>
+        
+  
+        <div class="form-group">
+          <label>Enter your name</label>
+          <input type="text" class="form-control" name="user" formControlName="user">
+        </div>
+
+        <div class="form-group">
+            <label>Number of shirts</label>
+            <input type="text" class="form-control"  name="shirt" formControlName="shirt">
+          </div>
+
+          <div class="form-group">
+                <label>Number of pants</label>
+                <input type="text" class="form-control"  name="pant" formControlName="pant">
+              </div>
+
+              <button type="submit" class="btn btn-primary">Create Dashboard</button>
+              
+             
+              
+              </form> -->
+
+              <div class="card">
+              <div class="card-body">
+
+            <form [formGroup]="form" (ngSubmit)="submit()">
+
+            <div class="form-group">
+
+              
+             <label>Firstname</label>
+              <input type="text" name="first" placeholder="Firstname" class="form-control" formControlName="first" /> 
+
+                
+              </div>
+
+              <div class="form-group">
+              <label>Lastname</label>   
+                  <input type="text"  name="last" placeholder="Lastname" class="form-control" formControlName="last" /> 
+
+               </div>
+
+               <div class="form-group">
+                  <label>Working at</label>   
+                      <input type="text"  name="last" placeholder="Working at" class="form-control" formControlName="work" /> 
+    
+                   </div>
+                   <div class="form-group">
+                      <label>City (or) Town</label>   
+                          <input type="text"  name="last" placeholder="Enter city or Town" class="form-control" formControlName="city" /> 
+        
+                       </div>
+           
+                       <!-- <div class="form-group">
+                          <label>Upload Profile picture</label>
+                          <input type="file"  (change)="uploadPhoto($event)">
+                          
+                        </div> -->
+
+          
+                        <button type="submit" class="btn btn-primary">Create Dashboard</button>
+
+
+
+
+            </form>
+              </div>
+              </div>
+           
+
+            </div>
+
+
+            <ng-template #low>
+
+              
+    
+         
+           
+              
+                <img  src="./assets/logo.jpg" alt="card image" style="width: 20%;height: 240px;position: relative;border-radius: 50%">
+                <!-- <img style="float: right;position: absolute;" src="./assets/logo1.jpg" alt="card image" style="width: 100%;height: 240px; position: absolute;
+               
+                left: 50%;
+                transform: translate(-50%, -50%);
+               
+                
+                
+                font-size: 16px;
+                
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;"> -->
+
+                <!-- <img style="float: initial;" src="./assets/logo1.jpg" alt="card image" style="width: 20%;height: 240px;"> -->
+
+
+ 
+            
+                    
+              
+
+                <h3 class="card-title"><b>{{first}}&nbsp;{{last}}</b></h3>
+
+                <!-- <div class="card"> -->
+             
+                <h5><i class="fa fa-briefcase" aria-hidden="true"></i>&nbsp;&nbsp;{{work}}</h5>
+
+               <h5><i class="fa fa-map-marker fa-1x" aria-hidden="true"></i>&nbsp;&nbsp;{{city}}</h5>
+               <hr>
+               <form [formGroup]="form1" (ngSubmit)="comm()">
+                 <p>{{msgv}}</p>
+                  <textarea rows="4" cols="50" name="comment" formControlName="comment">
+                  Enter text here...</textarea> 
+                 <br>
+                 <br>
+                  <button type="submit" class="btn btn-primary">Post Comment</button>
+           
+                </form>
+
+
+              <!-- </div> -->
+            
+                 </ng-template>  
+                   
+                
+           
+</div>
+

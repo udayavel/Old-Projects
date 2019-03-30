@@ -1,0 +1,40 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="container"  style="animation: fadeIn 3s;">
+        <div class="card">
+            
+          <div class="card-body text-center">
+            <p class="card-text"><b>{{product}}</b></p>
+            
+            <p class="card-text"><img src="{{url}}" width="100px" height="100px" (click)="info(vel.product)"></p>
+            <!-- <p class="card-text">{{vel.spec}}</p> -->
+            
+            <button  class="btn btn-success" type="submit" style="text-align: center"><b>Pay  </b>&#x20B9; {{price}}</button>&nbsp;&nbsp;&nbsp;
+            <button  class="btn btn-danger" type="submit" (click)="remove()"><b>Remove  </b></button>
+            
+
+           
+            <!-- <button class="btn btn-danger" type="submit" (click)="booking(vel.product,vel.price,vel.urlvalue)"><b>Book Now</b></button> -->
+          </div>
+         
+        </div>
+       
+        <h2 style="text-align: center">&#x20B9;&nbsp;{{finalAmount}}</h2>
+        <h2 *ngIf="paypalLoad">Paypal button is loading</h2>
+                <div id="btn" style="text-align: center"></div>
+        </div>
+       
+        <hr>
+        <!-- <div *ngIf="!finalAmount;then f"> </div>
+        <ng-template #f>
+        <h2 *ngIf="paypalLoad">Paypal button is loading</h2>
+        <div id="btn"></div>
+    </ng-template> -->
+   
+<!-- <input type="number" [(ngModel)]="finalAmount" style="padding-bottom: 10px;"> -->
+
+

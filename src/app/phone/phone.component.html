@@ -1,0 +1,56 @@
+<!-- <div class="container">
+<form [formGroup]="form" (ngSubmit)="tryRegister(form.value)">
+    <h1><b>Login</b></h1>
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="text" class="form-control" name="phone" formControlName="phone">
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div> -->
+  <br>
+  <br>
+  <br>
+  <br>
+<div class="container">
+    <div [hidden]="user">
+
+      <h1>Sign In with Your Phone Number</h1>
+    
+      <label>Country code</label><br>
+      <input type="text" [(ngModel)]="phoneNumber.country"  class="form-control" placeholder="Country code"    maxlength="2">
+      <br>
+      <label>Phone Number</label><br>
+      <input type="text" [(ngModel)]="phoneNumber.phone"     class="form-control" placeholder="Enter phone number"  maxlength="10">
+      <!-- <input type="text" [(ngModel)]="phoneNumber.prefix"   class="input" placeholder="555"  maxlength="3">
+      <input type="text" [(ngModel)]="phoneNumber.line"     class="input" placeholder="5555" maxlength="4"> -->
+    
+      <hr>
+    
+      <div id="recaptcha-container"></div>
+    
+      <hr>
+    
+      <button class="btn btn-primary" (click)="sendLoginCode()">SMS Text Login Code</button>
+    
+      <div *ngIf="windowRef.confirmationResult">
+        <hr>
+        <label for="code">Enter your Verification Code Here</label><br>
+        <input type="text" name="code" [(ngModel)]="verificationCode" class="input">
+    
+        <button class="btn btn-success" (click)="verifyLoginCode()">Verify</button>
+      </div>
+    
+    </div>
+  </div>
+
+    
+    
+    <div *ngIf="user">
+    
+      <div class="notification is-success">You have successfully logged in with your phone number!</div>
+    
+      Phone: {{num}}
+      UserId: {{ user?.uid }}
+    
+    </div>
